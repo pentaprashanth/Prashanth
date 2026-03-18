@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penta Legal Solutions | Advocate Penta Prashanth</title>
+  <style>
+    /* --- CORE STYLES --- */
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family:'Segoe UI', sans-serif; background:#f9f9f9; color:#333; line-height: 1.6;}
+    h1,h2,h3 {font-family:'Georgia', serif;}
+
+    /* Navbar & Logo */
+    nav {
+      background:#111; padding:10px 40px; display:flex; justify-content:space-between; align-items:center;
+      position:sticky; top:0; z-index:1000; height: 80px;
+    }
+    .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-img { height: 50px; width: auto; border-radius: 4px; }
+    .logo-text { color:#f4c20d; font-size:22px; font-weight:bold; letter-spacing: 1px; }
+    
+    nav a {
+      color:white; text-decoration:none; margin:0 15px; font-weight:500; transition:.3s;
+    }
+    nav a:hover {color:#f4c20d;}
+
+    /* Hero Section */
+    header {
+      background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('https://images.pexels.com/photos/6077326/pexels-photo-6077326.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover;
+      color:white; text-align:center; padding:140px 20px;
+    }
+    header h1 {font-size:52px; margin-bottom:15px; color:#f4c20d;}
+    header p {font-size:20px;}
+hug AQfc5RDX
+    /* Section Layout */
+    section {padding:70px 20px; max-width:1200px; margin:auto;}
+    h2 {text-align:center; font-size:36px; margin-bottom:40px; color:#222;}
+
+    /* About */
+    #about {display:flex; flex-wrap:wrap; gap:40px; align-items:center;}
+    #about img {width:350px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.2);}
+    #about p {flex:1; font-size:18px;}
+
+    /* Services */
+    .services {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px;}
+    .service-box {
+      background:white; padding:30px; border-radius:12px;
+      text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:.3s;
+    }
+    .service-box:hover {transform:translateY(-8px); background:#f4f6ff;}
+    .service-box img {width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:15px;}
+    .service-box h3 {color:#0d47a1; margin-bottom:10px;}
+
+    /* Contact Form */
+    #contact {background:#f4c20d; border-radius:10px; padding:50px;}
+    #contact form {display:flex; flex-direction:column; gap:15px; max-width:500px; margin:auto;}
+    #contact input, #contact textarea {
+      padding:14px; border:none; border-radius:8px; font-size:16px; width: 100%;
+    }
+    #contact button {
+      background:#111; color:#fff; padding:14px; border:none; border-radius:8px;
+      font-size:16px; cursor:pointer; transition:.3s;
+    }
+    #contact button:hover {background:#333;}
+
+    /* Footer */
+    footer {background:#111; color:#ccc; text-align:center; padding:25px; margin-top:50px;}
+    footer span {color:#f4c20d;}
+
+    /* --- DISCLAIMER POPUP STYLES --- */
+    #disclaimer-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.95); display: flex; justify-content: center;
+      align-items: center; z-index: 9999; padding: 20px;
+    }
+    .disclaimer-content {
+      background: white; padding: 40px; border-radius: 12px; max-width: 700px;
+      text-align: center; box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+    }
+    .disclaimer-content h2 { margin-bottom: 20px; color: #111; border-bottom: 2px solid #f4c20d; display: inline-block; padding-bottom: 5px;}
+    .disclaimer-content p { font-size: 15px; line-height: 1.6; color: #444; margin-bottom: 15px; text-align: justify; }
+    .agree-btn {
+      background: #111; color: #f4c20d; padding: 12px 40px; border: none;
+      border-radius: 5px; font-weight: bold; cursor: pointer; font-size: 16px; margin-top: 10px; transition: 0.3s;
+    }
+    .agree-btn:hover { background: #333; transform: scale(1.05); }
+    body.modal-active { overflow: hidden; }
+
+    /* --- WHATSAPP TOOL STYLES --- */
+    .whatsapp-float {
+      position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px;
+      background-color: #25d366; color: #FFF; border-radius: 50px;
+      text-align: center; font-size: 30px; box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
+      z-index: 998; display: flex; align-items: center; justify-content: center;
+      text-decoration: none; transition: .3s;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      header h1 { font-size: 36px; }
+      .logo-text { font-size: 16px; }
+      nav { padding: 10px 20px; }
+      #about img { width: 100%; }
+    }
+  </style>
+</head>
+<body class="modal-active">
+
+  <div id="disclaimer-overlay">
+    <div class="disclaimer-content">
+      <h2>Disclaimer</h2>
+      <p>The Bar Council of India does not permit the solicitation of work and advertising by legal practitioners/advocates. By accessing our website, the user acknowledges that:</p>
+      <p>The user wishes to gain more information about Penta Legal Solutions for his/her information and use. He/she also acknowledges that there has been no attempt by us to advertise or solicit work.</p>
+      <p>Any information obtained from our website does not lead to the creation of the Advocate–Client relationship. None of the information contained in our website amounts to any form of legal opinion or legal advice.</p>
+      <button class="agree-btn" onclick="closeDisclaimer()">Yes, I Agree !</button>
+    </div>
+  </div>
+
+  <a href="https://wa.me/917386303769?text=Hello Penta Legal Solutions, I am reaching out regarding a legal matter." 
+     class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+  </a>
+
+  <nav>
+    <a href="#" class="logo-container">
+      <img src="http://googleusercontent.com/image_collection/image_retrieval/14663926828921842423_0" alt="Logo" class="logo-img">
+      <span class="logo-text">PENTA LEGAL SOLUTIONS</span>
+    </a>
+    <div>
+      <a href="#about">About</a>
+      <a href="#services">Practice Areas</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Justice. Integrity. Commitment.</h1>
+    <p>Penta Legal Solutions – Professional Legal Services by Advocate Penta Prashanth</p>
+  </header>
+
+  <section id="about">
+    <img src="Prashanth image.jpeg" alt="Law Books">
+    <p>
+      <b>Penta Legal Solutions</b> is a premier legal firm led by <b>Advocate Penta Prashanth</b>, practicing across the Supreme Court, High Courts, and District Courts in India.  
+      With years of expertise in Civil, Criminal, Corporate, and Family Law, we aim to provide ethical, transparent, and effective legal representation.  
+      Our clients trust us for delivering justice with unwavering commitment and integrity.
+    </p>
+  </section>
+
+  <section id="services">
+    <h2>Practice Areas</h2>
+    <div class="services">
+      <div class="service-box">
+        <img src="https://images.pexels.com/photos/5669602/pexels-photo-5669602.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Civil Law">
+        <h3>Civil Law</h3>
+        <p>Property disputes, contracts & civil litigation.</p>
+      </div>
+      <div class="service-box">
+        <img src="https://images.pexels.com/photos/6077325/pexels-photo-6077325.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Criminal Law">
+        <h3>Criminal Law</h3>
+        <p>Representation in bail, trials & appeals.</p>
+      </div>
+      <div class="service-box">
+        <img src="https://images.pexels.com/photos/5668773/pexels-photo-5668773.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Family Law">
+        <h3>Family Law</h3>
+        <p>Divorce, custody & maintenance cases.</p>
+      </div>
+      <div class="service-box">
+        <img src="https://images.pexels.com/photos/5668776/pexels-photo-5668776.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Corporate Law">
+        <h3>Corporate Law</h3>
+        <p>Business disputes & compliance advisory.</p>
+      </div>
+      <div class="service-box">
+        <img src="https://images.pexels.com/photos/5669601/pexels-photo-5669601.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Property Law">
+        <h3>Property Law</h3>
+        <p>Real estate disputes & registration.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 style="text-align:center; margin-bottom:20px;">Get in Touch</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p style="text-align:center; margin-top:20px; font-size:18px;">
+      📞 +91 73863 03769 | ✉ advocateprashanth@lawfirm.com <br>
+      📍 Chamber No. 45, District Court Complex, Hyderabad, India
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 <span>Penta Legal Solutions</span> | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function closeDisclaimer() {
+      document.getElementById('disclaimer-overlay').style.display = 'none';
+      document.body.classList.remove('modal-active');
+    }
+  </script>
+
+</body>
+</html>
