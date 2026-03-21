@@ -12,6 +12,44 @@ body {
     scroll-behavior: smooth;
 }
 
+/* Blur before accept */
+body.blur {
+    overflow: hidden;
+}
+
+/* DISCLAIMER */
+.disclaimer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    text-align: center;
+    padding: 20px;
+}
+
+.disclaimer-box {
+    max-width: 700px;
+    background: #0b1f3a;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.disclaimer button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: gold;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
 /* Header */
 header {
     position: sticky;
@@ -121,9 +159,8 @@ footer {
     text-decoration: none;
 }
 
-/* ✅ MOBILE RESPONSIVE (Added only) */
+/* Mobile */
 @media (max-width: 768px) {
-
     header {
         flex-direction: column;
         text-align: center;
@@ -188,7 +225,31 @@ footer {
 </style>
 </head>
 
-<body>
+<body class="blur">
+
+<!-- DISCLAIMER -->
+<div class="disclaimer" id="disclaimer">
+    <div class="disclaimer-box">
+        <h2>Disclaimer</h2>
+        <p>
+        The Bar Council of India does not permit the solicitation of work and advertising by legal practitioners/advocates.
+        By accessing our website, the user acknowledges that:
+        </p>
+
+        <p>
+        The user wishes to gain more information about us for his/her information and use.
+        He/she also acknowledges that there has been no attempt by us to advertise or solicit work.
+        Any information obtained or downloaded from this website does not create an Advocate–Client relationship.
+        </p>
+
+        <p>
+        None of the information contained in our website amounts to legal advice.
+        This website uses cookies to improve user experience.
+        </p>
+
+        <button onclick="acceptDisclaimer()">Yes, I Agree</button>
+    </div>
+</div>
 
 <!-- Header -->
 <header>
@@ -205,27 +266,21 @@ footer {
 <section id="home" class="hero">
 <h1>A Leading Law Firm</h1>
 <p>Expert legal guidance protecting your rights & financial future</p>
-<button onclick="document.getElementById('contact').scrollIntoView()" class="btn">
+<button onclick="document.getElementById('contact').scrollIntoView()">
 Get Help Now
 </button>
 </section>
 
-<!-- Best Advice -->
 <section>
 <h2>Best Legal Advice</h2>
-<p>Always seek early guidance from a qualified lawyer to protect your rights.</p>
+<p>Always seek early guidance from a qualified lawyer.</p>
 </section>
 
-<!-- About -->
 <section id="about">
 <h2>About Us</h2>
-<p>
-We are trusted legal advisors specializing in financial loans, settlements, and family matters.
-Our goal is to provide clear guidance and effective solutions.
-</p>
+<p>Trusted legal advisors specializing in financial and family matters.</p>
 </section>
 
-<!-- Why Choose -->
 <section>
 <h2>Why Choose Us?</h2>
 <div class="grid">
@@ -236,68 +291,40 @@ Our goal is to provide clear guidance and effective solutions.
 </div>
 </section>
 
-<!-- Practice Areas -->
 <section id="services">
 <h2>Practice Areas</h2>
 <div class="grid">
 <div class="card">Debt Consolidation</div>
-<div class="card">High Court Cases</div>
 <div class="card">Civil Law</div>
 <div class="card">Divorce & Custody</div>
-<div class="card">Home Loans</div>
 <div class="card">Criminal Law</div>
 </div>
 </section>
 
-<!-- Advocate -->
-<section id="advocate">
-<h2>Penta Prashanth</h2>
-
-<div class="advocate">
-<img src="Prashanth image.jpeg" alt="Advocate">
-
-<div style="max-width:400px;">
-<h3>Experienced Advocate</h3>
-<p>
-Expert in financial disputes, family law, and high court matters.
-Focused on achieving best results for clients.
-</p>
-</div>
-</div>
-
-</section>
-
-<!-- Contact -->
 <section id="contact">
 <h2>Free Consultation</h2>
-
 <form onsubmit="sendWhatsApp(); return false;">
 <input id="name" placeholder="Name" required><br>
 <input id="phone" placeholder="Phone" required><br>
 <textarea id="message" placeholder="Describe your case"></textarea><br>
 <button>Send via WhatsApp</button>
 </form>
-
 </section>
 
-<!-- Footer -->
 <footer>
 <p>© 2026 Penta Legal Solutions</p>
 </footer>
 
-<!-- WhatsApp -->
-<a class="whatsapp" target="_blank"
-href="https://wa.me/917386303769">
-
-<svg width="20" height="20" fill="white" viewBox="0 0 32 32">
-<path d="M16 2.9c-7.2 0-13 5.8-13 13 0 2.3.6 4.5 1.7 6.4L3 29l7-1.8c1.8 1 3.8 1.5 6 1.5 7.2 0 13-5.8 13-13s-5.8-13-13-13z"/>
-</svg>
-
+<a class="whatsapp" target="_blank" href="https://wa.me/917386303769">
 WhatsApp
-
 </a>
 
 <script>
+function acceptDisclaimer() {
+    document.getElementById("disclaimer").style.display = "none";
+    document.body.classList.remove("blur");
+}
+
 function sendWhatsApp() {
     let name = document.getElementById("name").value;
     let phone = document.getElementById("phone").value;
