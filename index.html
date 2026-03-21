@@ -40,6 +40,7 @@ nav a:hover {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
     url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f');
     background-size: cover;
+    background-position: center;
     color: white;
     display: flex;
     justify-content: center;
@@ -117,6 +118,72 @@ footer {
     gap: 8px;
     color: white;
     font-weight: bold;
+    text-decoration: none;
+}
+
+/* ✅ MOBILE RESPONSIVE (Added only) */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    .hero {
+        height: auto;
+        padding: 60px 10px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    .grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .advocate {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .advocate img {
+        width: 180px;
+        height: 180px;
+    }
+
+    input, textarea {
+        width: 95%;
+    }
+
+    .whatsapp {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px 14px;
+        font-size: 14px;
+    }
 }
 </style>
 </head>
