@@ -12,19 +12,18 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Blur before accept */
 body.blur {
     overflow: hidden;
 }
 
-/* DISCLAIMER */
+/* DISCLAIMER BLACK & WHITE */
 .disclaimer {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.85);
+    background: black;
     color: white;
     display: flex;
     justify-content: center;
@@ -36,7 +35,8 @@ body.blur {
 
 .disclaimer-box {
     max-width: 700px;
-    background: #0b1f3a;
+    background: white;
+    color: black;
     padding: 30px;
     border-radius: 10px;
 }
@@ -44,13 +44,13 @@ body.blur {
 .disclaimer button {
     margin-top: 20px;
     padding: 10px 20px;
-    background: gold;
+    background: black;
+    color: white;
     border: none;
     cursor: pointer;
     font-weight: bold;
 }
 
-/* Header */
 header {
     position: sticky;
     top: 0;
@@ -72,7 +72,6 @@ nav a:hover {
     color: gold;
 }
 
-/* Hero */
 .hero {
     height: 90vh;
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
@@ -91,13 +90,11 @@ nav a:hover {
     font-size: 45px;
 }
 
-/* Sections */
 section {
     padding: 60px 20px;
     text-align: center;
 }
 
-/* Cards */
 .grid {
     display: flex;
     flex-wrap: wrap;
@@ -113,37 +110,18 @@ section {
     border-radius: 10px;
 }
 
-/* Advocate */
-.advocate {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.advocate img {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-/* Contact */
 input, textarea {
     width: 80%;
     padding: 10px;
     margin: 8px;
 }
 
-/* Footer */
 footer {
     background: #0b1f3a;
     color: white;
     padding: 20px;
 }
 
-/* WhatsApp */
 .whatsapp {
     position: fixed;
     bottom: 20px;
@@ -158,70 +136,6 @@ footer {
     font-weight: bold;
     text-decoration: none;
 }
-
-/* Mobile */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    nav {
-        margin-top: 10px;
-    }
-
-    nav a {
-        display: inline-block;
-        margin: 5px;
-    }
-
-    .hero {
-        height: auto;
-        padding: 60px 10px;
-    }
-
-    .hero h1 {
-        font-size: 28px;
-    }
-
-    .hero p {
-        font-size: 14px;
-    }
-
-    section {
-        padding: 40px 15px;
-    }
-
-    .grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        width: 90%;
-    }
-
-    .advocate {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .advocate img {
-        width: 180px;
-        height: 180px;
-    }
-
-    input, textarea {
-        width: 95%;
-    }
-
-    .whatsapp {
-        bottom: 15px;
-        right: 15px;
-        padding: 10px 14px;
-        font-size: 14px;
-    }
-}
 </style>
 </head>
 
@@ -232,26 +146,15 @@ footer {
     <div class="disclaimer-box">
         <h2>Disclaimer</h2>
         <p>
-        The Bar Council of India does not permit the solicitation of work and advertising by legal practitioners/advocates.
-        By accessing our website, the user acknowledges that:
+        The Bar Council of India does not permit the solicitation of work and advertising by legal practitioners.
         </p>
-
         <p>
-        The user wishes to gain more information about us for his/her information and use.
-        He/she also acknowledges that there has been no attempt by us to advertise or solicit work.
-        Any information obtained or downloaded from this website does not create an Advocate–Client relationship.
+        This website is only for informational purposes and does not create a lawyer-client relationship.
         </p>
-
-        <p>
-        None of the information contained in our website amounts to legal advice.
-        This website uses cookies to improve user experience.
-        </p>
-
-        <button onclick="acceptDisclaimer()">Yes, I Agree</button>
+        <button onclick="acceptDisclaimer()">I Agree</button>
     </div>
 </div>
 
-<!-- Header -->
 <header>
 <h2>Penta Legal Solutions</h2>
 <nav>
@@ -262,47 +165,42 @@ footer {
 </nav>
 </header>
 
-<!-- Hero -->
 <section id="home" class="hero">
-<h1>A Leading Law Firm</h1>
-<p>Expert legal guidance protecting your rights & financial future</p>
+<h1>Top Law Office in Hyderabad and Mancherial</h1>
+<p>Expert legal guidance protecting your rights</p>
 <button onclick="document.getElementById('contact').scrollIntoView()">
 Get Help Now
 </button>
 </section>
 
-<section>
-<h2>Best Legal Advice</h2>
-<p>Always seek early guidance from a qualified lawyer.</p>
-</section>
-
 <section id="about">
 <h2>About Us</h2>
-<p>Trusted legal advisors specializing in financial and family matters.</p>
-</section>
-
-<section>
-<h2>Why Choose Us?</h2>
-<div class="grid">
-<div class="card">Affordable Fees</div>
-<div class="card">Successful Settlements</div>
-<div class="card">Happy Clients</div>
-<div class="card">Strong Legal Support</div>
-</div>
+<p>Professional legal services across multiple domains.</p>
 </section>
 
 <section id="services">
 <h2>Practice Areas</h2>
 <div class="grid">
-<div class="card">Debt Consolidation</div>
-<div class="card">Civil Law</div>
-<div class="card">Divorce & Custody</div>
-<div class="card">Criminal Law</div>
+<div class="card">Civil Laws</div>
+<div class="card">Criminal Laws</div>
+<div class="card">Arbitration</div>
+<div class="card">Debt Recovery Tribunal</div>
+<div class="card">Debt Recovery Appellate Tribunal</div>
+<div class="card">Banking Laws</div>
+<div class="card">Family & Divorce Laws</div>
+<div class="card">Property Laws</div>
+<div class="card">Consumer Laws</div>
+<div class="card">Company Laws</div>
+<div class="card">Labour Laws</div>
 </div>
 </section>
 
 <section id="contact">
-<h2>Free Consultation</h2>
+<h2>Contact Us</h2>
+<p><b>Head Office:</b> Chikkadapally, Street No.10, Vivek Nagar, Near Police Station, Hyderabad - 500020</p>
+<p><b>Branch Office:</b> GRM Township, Road No.1, Near VR Conventional Hall, Mancherial District - 504301</p>
+<p><b>Email:</b> pentaprashanthadv@gmail.com</p>
+
 <form onsubmit="sendWhatsApp(); return false;">
 <input id="name" placeholder="Name" required><br>
 <input id="phone" placeholder="Phone" required><br>
